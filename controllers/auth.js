@@ -3,13 +3,9 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 
 const User = require('../models/user.js');
-<<<<<<< HEAD
 const Driver = require('../models/driver.js');
 
 // Shipper router
-=======
-
->>>>>>> 5deddf55c5b9e8a1737e658408e3a128da081bf7
 router.get('/sign-up', (req, res) => {
   res.render('auth/sign-up.ejs');
 });
@@ -18,7 +14,6 @@ router.get('/sign-in', (req, res) => {
   res.render('auth/sign-in.ejs');
 });
 
-<<<<<<< HEAD
 // Driver router
 router.get('/sign-up-driver', (req, res) => {
   res.render('auth/sign-up-driver.ejs');
@@ -29,8 +24,6 @@ router.get('/sign-in-driver', (req, res) => {
 });
 
 
-=======
->>>>>>> 5deddf55c5b9e8a1737e658408e3a128da081bf7
 router.get('/sign-out', (req, res) => {
   req.session.destroy();
   res.redirect('/');
@@ -96,7 +89,6 @@ router.post('/sign-in', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 // Driver Sign-up
 router.post('/sign-up-driver', async (req, res) => {
   try {
@@ -162,6 +154,3 @@ router.post('/sign-in-driver', async (req, res) => {
 
 
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> 5deddf55c5b9e8a1737e658408e3a128da081bf7
