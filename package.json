@@ -15,7 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
-<<<<<<< HEAD
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.19.2",
@@ -23,14 +22,12 @@
     "method-override": "^3.0.0",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
-=======
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "method-override": "^3.0.0",
     "mongoose": "^8.0.1",
->>>>>>> 5deddf55c5b9e8a1737e658408e3a128da081bf7
     "morgan": "^1.10.0"
   }
 }
