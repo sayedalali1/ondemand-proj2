@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <title>Sign In</title>
+  <title>Driver Sign In</title>
 </head>
 <body>
-  <%- include('../partials/_navbar.ejs') %> 
-  <h1>Shipper Sign in</h1>
-  <form action="/auth/sign-in" method="POST">
+  <!-- need to creat driver _navbar -->
+  <%- include('../partials/_navbar-driver.ejs') %> 
+  <h1>Driver Sign in</h1>
+  <form action="/auth/sign-in-driver" method="POST">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required />
 

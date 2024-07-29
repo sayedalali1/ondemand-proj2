@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title><%= order.dropoffLocation %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1><%= order.pickupLocation %> to <%= order.dropoffLocation %></h1>
+
+  <p>Rate: <%= order.rate %></p>
+
+
+  <% if (order.vehicleType) { %>
+    <p>Vehicle Type: <%= order.vehicleType %></p>
+  <% } %>
+
+  <% if (order.description) { %>
+    <p>Description: <%= order.description %></p>
+  <% } %>
+  <p>The status of this order is: <%= order.status %></p>
+
+  <a href="/users/<%= user._id %>/orders/<%= order._id %>/edit">Edit this order</a>
+
+  <form action="/users/<%= user._id %>/orders/<%= order._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete this order</button>
+  </form>
+</body>
+</html>

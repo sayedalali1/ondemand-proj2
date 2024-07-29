@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
 
-// Define the application schema
-const applicationSchema = new mongoose.Schema({
-  company: String,
-  title: String,
+const orderSchema = new mongoose.Schema({
+  pickupLocation: String,
+  dropoffLocation: String,
   date: Date,
-  notes: String,
-  postingLink: String,
+  description: String,
+  vehicleType: {
+    type: String,
+    enum: ['sedan', 'suv', 'truck']
+  },
   status: {
     type: String,
-    enum: ['interested', 'applied', 'interviewing', 'rejected', 'accepted']
+    enum: ['pending', 'readyForPickup']
   }
 }, { timestamps: true });
 
-// Check if the User model is already defined
-const User = mongoose.models.User || mongoose.model('User', new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -23,9 +24,9 @@ const User = mongoose.models.User || mongoose.model('User', new mongoose.Schema(
     type: String,
     required: true,
   },
-  applications: [applicationSchema]
-}));
+  orders: [orderSchema]
+});
+
+const User = mongoose.models.User || mongoose.model('User', userSchema);
 
 module.exports = User;
-
-

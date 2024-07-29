@@ -1,0 +1,27 @@
+<!-- views/partials/_navbar.ejs -->
+
+<link rel="stylesheet" href="/stylesheets/partials.css" />
+
+<nav>
+    <% if (user) { %>
+      <div class="navbar">
+        <!-- <h1 id="nav-header">Ondemand Driver</h1> -->
+        <div class="nav-links">
+          <a class="authlink" href="/users/<%= user._id %>/orders-driver/new-loads">New Loads</a>
+          <a class="authlink" href="/user/<%= user._id %>/orders-driver">Live Orders</a>
+          <a class="authlink" href="/auth/sign-out">Sign Out</a>
+        </div>
+      </div>  
+    <% } else { %>
+      <div class="navbar">
+        <h1 id="nav-header-driver">Drive-Ondemand</h1>
+        <div class="nav-links">
+
+          <a class="authlink" href="/auth/sign-in-driver">Driver Sign In</a>
+          <a class="authlink" href="/auth/sign-up-driver">Driver Sign Up</a>
+          <a class="authlink" href="/auth/sign-in">Shipper</a>
+
+        </div>
+      </div>  
+    <% } %>
+  </nav>
