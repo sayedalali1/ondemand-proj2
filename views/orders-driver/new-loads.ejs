@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>New Order Form</title>
+    <title>New Load</title>
 
     <!-- Need google api -->
     <!-- <script>
@@ -31,8 +31,8 @@
     </script> -->
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>New Order Form</h1>
+    <%- include('../partials/_navbar-driver.ejs') %>
+    <h1>New Load</h1>
 
     <form action="/users/<%= user._id %>/orders" method="POST">
         <label for="pickupLocation">Pick-up Location</label>
@@ -49,15 +49,15 @@
 
         <label for="vehicleType">Vehicle type</label>
         <select name="vehicleType" id="vehicleType">
-            <option value="sedan">Sedan</option>
-            <option value="suv">SUV</option>
-            <option value="truck">Truck</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Suv">SUV</option>
+            <option value="Truck">Truck</option>
         </select>
 
         <label for="status">Order Status</label>
         <select name="status" id="status">
-            <option value="pending">Pending</option>
-            <option value="readyForPickup">Ready for Pick-up</option>
+            <option value="Pending">Pending</option>
+            <option value="Ready For Pick-up">Ready for Pick-up</option>
         </select>
 
         <label for="estimatedRate">Estimated Rate</label>

@@ -1,0 +1,26 @@
+<!-- views/partials/_sidebar.ejs -->
+
+<link rel="stylesheet" href="/stylesheets/partials.css" />
+
+<nav>
+  <% if (user) { %>
+    <div class="sidebar">
+      <h1 id="side-bar">Ondemand</h1>
+      <div id="side-nav" class="nav-links">
+        <a class="authlink" href="/users/<%= user._id %>/orders/new">Create New Order</a>
+        <a class="authlink" href="/users/<%= user._id %>/orders">Orders</a>
+        <a class="authlink" href="/auth/sign-out">Sign Out</a>
+      </div>
+    </div>
+  <% } else { %>
+    <div class="sidebar">
+      <h1 id="side-bar">Ship-Ondemand</h1>
+      <div id="side-nav" class="nav-links">
+        <a class="authlink" href="/auth/sign-in">Shipper Sign In</a>
+        <a class="authlink" href="/auth/sign-up">Shipper Sign Up</a>
+        <a class="authlink" href="/auth/sign-in-driver">Driver</a>
+      </div>
+    </div>
+  <% } %>
+</nav>
+

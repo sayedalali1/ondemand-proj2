@@ -1,34 +1,106 @@
 /* public/stylesheets/partials.css */
 
 .navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  
+}
+
+
+/* Hide navbar by default */
+.navbar {
+  display: none;
+}
+
+#nav-header {
+  color: #f5f0f0;
+  font-size: 1em !important;
+  margin: 0;
+}
+
+#nav-header-driver {
+  color: #f5f0f0;
+  font-size: 1em !important;
+  margin: 0;
+}
+
+.authlink {
+  text-decoration: none;
+  margin: 0 15px;
+  color: #b0b0b0;
+  font-weight: bold;
+}
+
+.authlink:hover {
+  color: white;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+  justify-content: flex-start;
+  background-color: #222;
+  gap: 10px;
+}
+
+#side-bar {
+  color: #b0b0b0;
+  padding: 10px 0;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  font-size: 1.2em !important;
+  margin: 0;
+  align-content: center;
+}
+
+#side-nav {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.sidebar a {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 1em !important;
+  border-radius: 4px;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+  color: white;
+}
+
+.sidebar a.active {
+  background-color: #444;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  /* Show navbar on tablet size screen and smaller */
+  .navbar {
     display: flex;
-    flex-direction: row;
-    max-width: 100vw;
-    padding: 5px 20px;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #nav-header {
-    color: #ce4866;
-    size: 1em !important;
-    margin: 0;
   }
 
-  #nav-header-driver {
-    color: #7048ce;
-    size: 1em !important;
-    margin: 0;
+  /* Hide sidebar on tablet size screens and smaller */
+  .sidebar {
+    display: none;
   }
-
-  
-  .authlink {
-    text-decoration: none;
-    margin: 0 15px;
-    color: #4b598e;
-    font-weight: bold;
-  }
-  
-  .authlink:hover {
-    color: white;
-  }
+}

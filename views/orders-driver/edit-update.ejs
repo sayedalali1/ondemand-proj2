@@ -29,7 +29,7 @@
       name="dropoffLocation" 
       id="dropoffLocation" 
       value="<%= order.dropoffLocation %>"
-   
+    >
     <label for="description">Description:</label>
     <textarea name="description" id="description"><%= order.description %></textarea>
 
@@ -44,14 +44,14 @@
     <select id="status" name="status">
       
       <option 
-        value="pending" 
-        <%= order.status === "pending" ? "selected" : "" %>
+        value="Pending" 
+        <%= order.status === "Pending" ? "selected" : "" %>
       >
         Pending
       </option>
       <option 
-        value="readyForPickup" 
-        <%= order.readyForPickup === "readyForPickup" ? "selected" : "" %>
+        value="Ready For Pick-up" 
+        <%= order.readyForPickup === "Ready For Pick-up" ? "selected" : "" %>
       >
         Picked-up
       </option>

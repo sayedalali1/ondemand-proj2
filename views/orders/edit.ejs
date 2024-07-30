@@ -10,6 +10,8 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
+  <%- include('../partials/_sidebar.ejs') %>
+
   <h1>Edit <%= order.pickupLocation %> to <%= order.dropoffLocation %></h1>
   <form 
     action="/users/<%= user._id %>/orders/<%= order._id %>?_method=PUT"
@@ -35,12 +37,37 @@
     <textarea name="description" id="description"><%= order.description %></textarea>
 
 
-    <label for="vehicleType">Vehicle type</label>
+    <!-- <label for="vehicleType">Vehicle type</label>
     <select name="vehicleType" id="vehicleType">
         <option value="sedan">Sedan</option>
         <option value="suv">SUV</option>
         <option value="truck">Truck</option>
+    </select> -->
+
+    <label for="vehicleType">Vehicle type:</label>
+    <select id="vehicleType" name="vehicleType">
+      
+      <option 
+        value="sedan" 
+        <%= order.vehicleType === "sedan" ? "selected" : "" %>
+      >
+        Sedan
+      </option>
+      <option 
+        value="suv" 
+        <%= order.vehicleType === "suv" ? "selected" : "" %>
+      >
+        SUV
+      </option>
+      <option 
+      value="truck" 
+      <%= order.vehicleType === "truck" ? "selected" : "" %>
+    >
+      Truck
+    </option>
+
     </select>
+
 
     <label for="status">Status:</label>
     <select id="status" name="status">

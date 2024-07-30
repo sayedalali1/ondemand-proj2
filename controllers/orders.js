@@ -98,7 +98,7 @@ router.get('/:orderId/edit', async (req, res) => {
   router.put('/:orderId', async (req, res, next) => {
     try {
     const currentUser = await User.findById(req.session.user._id);
-    const order = currentUser.order.id(req.params.orderId);
+    const order = currentUser.orders.id(req.params.orderId);
     order.set(req.body);
     await currentUser.save();
     res.redirect(`/users/${currentUser._id}/orders/${req.params.orderId}`);
