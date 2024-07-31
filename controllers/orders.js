@@ -19,6 +19,7 @@ router.get('/new', async (req, res) => {
     res.render('orders/new.ejs', { user: req.session.user });
 });
 
+
 router.post('/', async (req, res) => {
     try {
         // Look up the user from req.session
