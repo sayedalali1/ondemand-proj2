@@ -3,9 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 
 const User = require('../models/user.js');
-const Driver = require('../models/driver.js');
 
-// Shipper router
+// User router
 router.get('/sign-up', (req, res) => {
   res.render('auth/sign-up.ejs');
 });
@@ -29,6 +28,8 @@ router.get('/sign-out', (req, res) => {
   res.redirect('/');
 });
 
+
+// Sign-up
 router.post('/sign-up', async (req, res) => {
   try {
     // Check if the username is already taken
@@ -107,11 +108,18 @@ router.post('/sign-up-driver', async (req, res) => {
     // Must hash the password before sending to the database
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     req.body.password = hashedPassword;
+
+    // driver/shipper
+    if (req.path.includes('driver')) {
+      req.body.profile = 'driver';
+    } else {
+      req.body.profile = 'user';
+    }
   
     // All ready to create the new user!
     await User.create(req.body);
   
-    res.redirect('/auth/sign-in');
+    res.redirect('/auth/sign-in-driver');
   } catch (error) {
     console.log(error);
     res.redirect('/');
@@ -142,7 +150,8 @@ router.post('/sign-in-driver', async (req, res) => {
     // If there is other data you want to save to `req.session.user`, do so here!
     req.session.user = {
       username: userInDatabase.username,
-      _id: userInDatabase._id
+      _id: userInDatabase._id,
+      profile: userInDatabase.profile
     };
   
     res.redirect('/');

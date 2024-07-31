@@ -11,7 +11,10 @@ const path = require('path')
 const isSignedIn = require('./middleware/is-signed-in.js')
 const passUserToView = require('./middleware/pass-user-to-view.js')
 
+const passDriverToView = require('./middleware/pass-driver-to-view.js')
 const isSignedInDriver = require('./middleware/is-signed-in-driver.js')
+
+const authRoutes = require('./controllers/auth.js');
 
 
 // CONTROLLERS
@@ -57,7 +60,7 @@ app.use(isSignedIn)
 app.use('/users/:userId/orders', ordersCtrl)
 
 app.use(isSignedInDriver)
-app.use('/users/:userId/orders-', ordersCtrl)
+app.use('/users/:userId/orders-driver', ordersCtrl)
 
 
 app.listen(port, () => {
@@ -81,3 +84,4 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(passDriverToView)

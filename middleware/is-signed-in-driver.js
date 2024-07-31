@@ -1,7 +1,8 @@
-const isSignedIn = (req, res, next) => {
-    if (req.session.driver) return next()
+const isSignedInDriver = (req, res, next) => {
+    if (req.session.user && req.session.user.profile === 'driver')
+         return next()
         res.redirect('/auth/sign-in-driver')
 }
 
-module.exports = isSignedIn;
+module.exports = isSignedInDriver;
 
