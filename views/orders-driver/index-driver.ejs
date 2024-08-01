@@ -23,3 +23,33 @@
     </ul>
 </body>
 </html>
+
+
+
+<!-- <body>
+    <%- include('../partials/_navbar-driver.ejs') %>
+<h1>Current Orders</h1>
+
+
+<ul>
+  <% orders.forEach((order) => { %>
+    <li>
+        <a href="/users/<%= user._id %>/orders/<%= order._id %>">
+            <%= order.pickupLocation %> to <%= order.dropoffLocation %> - <%= order.vehicleType %>
+        </a>   
+    </li>      
+
+    <% }) %>
+
+<ul>
+  <% orders.forEach((order) => { %>
+    <li>
+        <a href="/users/<%= user._id %>/orders/<%= order._id %>">
+            <%= order.pickupLocation %> to <%= order.dropoffLocation %> - <%= order.vehicleType %>
+        </a>   
+    </li>      
+
+    <% }) %>
+</ul>
+</body>
+</html> -->
