@@ -90,3 +90,11 @@ form {
 .signin-link:hover {
   background-color: #ffffff;
 }
+
+#submit {
+  margin-top: 10px;
+}
+
+#edit {
+  margin-bottom: 10px;
+}

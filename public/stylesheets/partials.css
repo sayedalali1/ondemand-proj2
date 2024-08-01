@@ -65,6 +65,18 @@
   align-content: center;
 }
 
+#side-bar-driver {
+  color: #b0b0b0;
+  padding: 10px 0;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  font-size: 1.2em !important;
+  margin: 0;
+  align-content: center;
+}
+
+
 #side-nav {
   padding: 10px 0;
   display: flex;
@@ -104,3 +116,4 @@
     display: none;
   }
 }
+

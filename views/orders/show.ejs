@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <title><%= order.dropoffLocation %></title>
+  <link rel="stylesheet" href="/stylesheets/partials.css">
+
+  <title>Show order</title>
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
@@ -12,8 +14,7 @@
 
   <h1><%= order.pickupLocation %> to <%= order.dropoffLocation %></h1>
 
-  <p>Rate: <%= order.rate %></p>
-
+  <p>Date: <%= order.date %></p>
 
   <% if (order.vehicleType) { %>
     <p>Vehicle Type: <%= order.vehicleType %></p>
@@ -24,7 +25,9 @@
   <% } %>
   <p>The status of this order is: <%= order.status %></p>
 
-  <a href="/users/<%= user._id %>/orders/<%= order._id %>/edit">Edit this order</a>
+  <p>Rate: <%= order.rate %>BD100</p>
+
+  <a id="edit" href="/users/<%= user._id %>/orders/<%= order._id %>/edit">Edit this order</a>
 
   <form action="/users/<%= user._id %>/orders/<%= order._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete this order</button>

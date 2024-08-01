@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/partials.css">
+
     <title>New Order Form</title>
 
     <!-- Need google api -->
@@ -46,6 +48,9 @@
         <label for="date">Date</label>
         <input type="date" name="date" id="date">
 
+        <!-- <label for="bol">BOL</label>
+        <input name="bol" id="bol"></input> -->
+
         <label for="description">Description</label>
         <textarea name="description" id="description"></textarea>
 
@@ -65,7 +70,7 @@
         <label for="estimatedRate">Estimated Rate</label>
         <input type="text" name="estimatedRate" id="estimatedRate" readonly>
 
-        <button type="submit">Confirm order</button>
+        <button id="submit" type="submit">Confirm order</button>
     </form>
 
 </body>

@@ -5,20 +5,20 @@
 <nav>
   <% if (user) { %>
     <div class="sidebar">
-      <h1 id="side-bar">Ondemand</h1>
+      <h1 id="side-bar-driver">Drive-Ondemand</h1>
       <div id="side-nav" class="nav-links">
-        <a class="authlink" href="/users/<%= user._id %>/orders/new">Create New Order</a>
-        <a class="authlink" href="/users/<%= user._id %>/orders">Orders</a>
+        <a class="authlink" href="/users/<%= user._id %>/orders-driver/new-loads">Create New Order</a>
+        <a class="authlink" href="/users/<%= user._id %>/orders-driver">Orders</a>
         <a class="authlink" href="/auth/sign-out">Sign Out</a>
       </div>
     </div>
   <% } else { %>
     <div class="sidebar">
-      <h1 id="side-bar">Ship-Ondemand</h1>
+      <h1 id="side-bar-driver">Drive-Ondemand</h1>
       <div id="side-nav" class="nav-links">
-        <a class="authlink" href="/auth/sign-in">Shipper Sign In</a>
-        <a class="authlink" href="/auth/sign-up">Shipper Sign Up</a>
-        <a class="authlink" href="/auth/sign-in-driver">Driver</a>
+        <a class="authlink" href="/auth/sign-in-driver">Driver Sign In</a>
+        <a class="authlink" href="/auth/sign-up-driver">Driver Sign Up</a>
+        <a class="authlink" href="/auth/sign-in-Shipper">Shipper</a>
       </div>
     </div>
   <% } %>
